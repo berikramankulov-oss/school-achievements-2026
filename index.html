@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>🏆 Жыл қорытындысы 2025–2026 | Мектеп жеңімпаздары мен марапаттары</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e6edea 100%);
+            color: #1e2f3a;
+            padding: 2rem 1.2rem;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        /* HERO - жыл қорытындысы стилі */
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "★";
+            font-size: 4rem;
+            color: rgba(212, 175, 55, 0.2);
+            position: absolute;
+            top: -20px;
+            left: 10%;
+        }
+
+        .hero::after {
+            content: "★";
+            font-size: 4rem;
+            color: rgba(212, 175, 55, 0.2);
+            position: absolute;
+            bottom: -30px;
+            right: 10%;
+        }
+
+        .year-badge {
+            background: linear-gradient(135deg, #2b5e3b, #1e4a2f);
+            color: white;
+            display: inline-block;
+            padding: 0.3rem 1.2rem;
+            border-radius: 80px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            background: linear-gradient(145deg, #c9a03d, #8b6b2c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .hero h1 span {
+            font-size: 3rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #2c5a4a;
+            background: rgba(255,248,225,0.7);
+            backdrop-filter: blur(2px);
+            display: inline-block;
+            padding: 0.5rem 1.8rem;
+            border-radius: 60px;
+            margin-top: 1rem;
+            font-weight: 500;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+        }
+
+        /* Табтар */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.7rem;
+            margin-bottom: 2.5rem;
+            background: rgba(255,255,245,0.7);
+            backdrop-filter: blur(4px);
+            padding: 0.8rem 1rem;
+            border-radius: 70px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            padding: 0.6rem 1.3rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.25s;
+            color: #2c4b3e;
+            font-weight: 600;
+            background: #ffffffcc;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            border: 1px solid #cfddcf;
+        }
+
+        .tab-btn:hover {
+            background: #f5e7c8;
+            border-color: #c9a03d;
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: #2b5e3b;
+            border-color: #2b5e3b;
+            color: white;
+            box-shadow: 0 8px 20px rgba(43,94,59,0.3);
+        }
+
+        .tab-pane {
+            display: none;
+            animation: fadeSlide 0.35s ease;
+        }
+
+        .tab-pane.active-pane {
+            display: block;
+        }
+
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateY(12px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        /* GRID карточкалары — жүлделі стиль */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 1.4rem 1.6rem 1.6rem 1.6rem;
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border: 1px solid rgba(185, 150, 70, 0.25);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            backdrop-filter: blur(2px);
+        }
+
+        .card:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 28px 38px -16px rgba(0, 0, 0, 0.2);
+            border-color: #d4af37;
+        }
+
+        /* жүлде белгісі */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(105deg, #faf3e0, #fff3e0);
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #8b6b2c;
+            width: fit-content;
+            margin-bottom: 1rem;
+            border-left: 3px solid #d4af37;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 0.3rem;
+            color: #1e3a2f;
+        }
+
+        .class-info {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #5f7b6a;
+            background: #eef6f0;
+            display: inline-block;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            margin-bottom: 0.8rem;
+        }
+
+        .achievement {
+            background: #fef7e8;
+            padding: 0.7rem 1rem;
+            border-radius: 24px;
+            margin: 0.7rem 0;
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: #a4712c;
+            border-left: 5px solid #e3b23c;
+            line-height: 1.4;
+        }
+
+        .teacher {
+            margin-top: 0.7rem;
+            font-size: 0.8rem;
+            color: #2b6e46;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            border-top: 1px solid #e2ecdf;
+            padding-top: 0.8rem;
+        }
+
+        .teacher strong {
+            font-weight: 800;
+            color: #1e4a2f;
+        }
+
+        .team-list {
+            background: #f6faf5;
+            border-radius: 20px;
+            padding: 0.7rem 1rem;
+            margin-top: 0.7rem;
+            font-size: 0.8rem;
+            border: 1px solid #d9e6d4;
+        }
+
+        .team-list span {
+            font-weight: 800;
+            color: #c9a03d;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            font-size: 0.8rem;
+            color: #4f6a5c;
+            border-top: 1px solid #d0ddcf;
+            padding-top: 2rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 760px) {
+            .hero h1 { font-size: 2rem; }
+            .tabs { border-radius: 36px; gap: 0.4rem; }
+            .tab-btn { padding: 0.4rem 1rem; font-size: 0.7rem;}
+            .grid { grid-template-columns: 1fr; gap: 1.2rem;}
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="year-badge">🏆 Жыл чемпиондары 2025–2026</div>
+        <h1>
+            <span>✨</span> Жетістіктер ассамблеясы <span>🏅</span>
+        </h1>
+        <p>Жеңіс формуласы: талант × еңбек × ұстаз</p>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="tab1">📚 Олимпиадалар</button>
+        <button class="tab-btn" data-tab="tab2">🔬 Ғылыми жобалар & Зерде</button>
+        <button class="tab-btn" data-tab="tab3">🤖 Робототехника</button>
+        <button class="tab-btn" data-tab="tab4">💧 Су министрлігі & Эко</button>
+        <button class="tab-btn" data-tab="tab5">🎭 Поэзия & Мұқағали</button>
+        <button class="tab-btn" data-tab="tab6">⚽ Спорт · Шеберлік · Би</button>
+        <button class="tab-btn" data-tab="tab7">👩‍🏫 Педагогтер марапаттары</button>
+    </div>
+
+    <!-- 1. ПӘНДІК ОЛИМПИАДАЛАР -->
+    <div id="tab1" class="tab-pane active-pane">
+        <div class="grid">
+            <div class="card"><div class="badge">🏆 5–6 сынып</div><h3>Алтынбек Думан</h3><div class="class-info">6 «Б»</div><div class="achievement">Қазақстан тарихы пәнінен республикалық пәндік олимпиаданың қалалық кезеңінде І орын, облыстық кезеңінде І орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Мырхиев Әбдікамал</div></div>
+            <div class="card"><div class="badge">🏆 5–6 сынып</div><h3>Бүркітбай Әлінур</h3><div class="class-info">6 «Ә»</div><div class="achievement">Орыс тілі пәнінен республикалық пәндік олимпиаданың қалалық кезеңінде ІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Нуртаева Айгуль Исаевна</div></div>
+            <div class="card"><div class="badge">🏆 5–6 сынып</div><h3>Шайман Аяна</h3><div class="class-info">6 «Б»</div><div class="achievement">Орыс тілі пәнінен республикалық пәндік олимпиаданың қалалық кезеңінде ІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Асадуллаева Акмарал</div></div>
+            <div class="card"><div class="badge">📐 5-6 сынып</div><h3>Ыдырысов Алдияр</h3><div class="class-info">5-сынып</div><div class="achievement">Математика пәнінен қалалық кезеңде ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Бажкенова Жадыра</div></div>
+            <div class="card"><div class="badge">🌿 5-6 сынып</div><h3>Ұзақова Инабат</h3><div class="class-info">5-сынып</div><div class="achievement">Жаратылыстану пәнінен қалалық кезеңде ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Жұмағалиева Әсел</div></div>
+            <div class="card"><div class="badge">📖 5-6 сынып</div><h3>Абайқызы Аэлита</h3><div class="class-info">5-сынып</div><div class="achievement">Қазақ тілі мен әдебиеті пәнінен қалалық кезеңде ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Аймыратова Гайнегул</div></div>
+            <div class="card"><div class="badge">🌱 5-6 сынып</div><h3>Ерболат Даниял</h3><div class="class-info">6-сынып</div><div class="achievement">Жаратылыстану пәнінен қалалық кезеңде ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Жанұзақ Фарида</div></div>
+            <div class="card"><div class="badge">📜 5-6 сынып</div><h3>Құттымұрат Бекжан</h3><div class="class-info">6-сынып</div><div class="achievement">Қазақ тілі мен әдебиеті пәнінен қалалық кезеңде ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Каюпова Дидар</div></div>
+            <div class="card"><div class="badge">🌟 1 сынып</div><h3>Кемел Айсұлтан</h3><div class="class-info">1 «Б»</div><div class="achievement">Республикалық «Ақбота», «Пони» олимпиадаларында І дәрежелі диплом иегері.</div><div class="teacher"><strong>Жетекшісі:</strong> Рахметова А.</div></div>
+            <div class="card"><div class="badge">🌟 1 сынып</div><h3>Ерханова Айлана</h3><div class="class-info">1 «Ж»</div><div class="achievement">Республикалық «Ақбота» олимпиадасында ІІІ дәрежелі Диплом иегері.</div><div class="teacher"><strong>Жетекшісі:</strong> Абдухапова Г.</div></div>
+            <div class="card"><div class="badge">🌟 1 сынып</div><h3>Абдигазиева Медина</h3><div class="class-info">1 «Ж»</div><div class="achievement">Республикалық «Ақбота» олимпиадасында ІІІ дәрежелі Диплом иегері.</div><div class="teacher"><strong>Жетекшісі:</strong> Абдухапова Г.</div></div>
+            <div class="card"><div class="badge">🌍 1 сынып</div><h3>Калмырзаева Аруна</h3><div class="class-info">1 «Ж»</div><div class="achievement">Халықаралық «Бастау» олимпиадасында І дәрежелі Диплом иегері.</div><div class="teacher"><strong>Жетекшісі:</strong> Абдухапова Г.</div></div>
+            <div class="card"><div class="badge">🥇 7–8 сынып</div><h3>Бек Жасмин</h3><div class="class-info">8 «Г»</div><div class="achievement">Қазақстан тарихы пәнінен республикалық пәндік олимпиаданың қалалық кезеңінде І орын, облыстық кезеңінде ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Календарова Айсұлу Алтынбековна</div></div>
+            <div class="card"><div class="badge">💻 7–8</div><h3>Мұратқызы Рабия</h3><div class="class-info">7 «Г»</div><div class="achievement">Информатика пәнінен республикалық пәндік олимпиаданың қалалық кезеңінде ІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Сыздықова Күнсұлу Бейсенғалиқызы</div></div>
+            <div class="card"><div class="badge">📖 7–8</div><h3>Сыздықова Нұрайым</h3><div class="class-info">7 «Г»</div><div class="achievement">Республикалық «Абай» пәндік олимпиадасының қалалық кезеңінде І орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Мұсатаева Бақтыгүл Исатайқызы</div></div>
+            <div class="card"><div class="badge">⚛️ 7–8</div><h3>Мүтәліп Расул</h3><div class="class-info">8 «Ә»</div><div class="achievement">Физика пәнінен республикалық пәндік олимпиаданың қалалық кезеңінде ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Мұсатаева Бақтыгүл Исатайқызы</div></div>
+            <div class="card"><div class="badge">📐 7–8</div><h3>Қуанышбай Айдана</h3><div class="class-info">8 «Г»</div><div class="achievement">Математика пәнінен республикалық пәндік олимпиаданың қалалық кезеңінде ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Сауяева Нұргүл Сақтапбергенқызы</div></div>
+            <div class="card"><div class="badge">🌍 7-8</div><h3>Төребек Ерқожа</h3><div class="class-info">7-сынып</div><div class="achievement">География пәнінен республикалық пәндік олимпиаданың қалалық кезеңінде ІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Жанұзақ Фарида</div></div>
+            <div class="card"><div class="badge">📜 7-8</div><h3>Мэлсқызы Арайлым</h3><div class="class-info">7-сынып</div><div class="achievement">Қазақстан тарихы пәнінен қалалық кезеңде ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Ермағанбет Айжан</div></div>
+            <div class="card"><div class="badge">🏅 9-11</div><h3>Адилбайқызы Айзат</h3><div class="class-info">9 «Ә»</div><div class="achievement">Қазақ тілі мен әдебиетінен «Тіл – тәуелсіздік тұғыры» республикалық олимпиадасында республикалық кезеңінде І орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Жунусов Досан Болатұлы</div></div>
+            <div class="card"><div class="badge">🧮 9-11</div><h3>Маратұлы Нұрасыл</h3><div class="class-info">10 «А»</div><div class="achievement">«Алтын түлек» республикалық математикалық олимпиадасының қалалық кезеңінде ІІІ орын және республикалық пәндік олимпиаданың қалалық кезеңінде ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Тоқтарбаев Нұрбол Мұратбекұлы</div></div>
+            <div class="card"><div class="badge">📊 9-11</div><h3>Құлахметова Аягөз</h3><div class="class-info">10 «А»</div><div class="achievement">«Алтын түлек» республикалық математикалық олимпиадасының қалалық кезеңінде ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Тоқтарбаев Нұрбол Мұратбекұлы</div></div>
+            <div class="card"><div class="badge">⚖️ Құқық</div><h3>Құрманай Асылнұр</h3><div class="class-info">11 «А»</div><div class="achievement">Құқық негіздері пәнінен республикалық пәндік олимпиаданың қалалық кезеңде ІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Календарова Айсұлу Алтынбековна</div></div>
+            <div class="card"><div class="badge">⚖️ Құқық</div><h3>Дидарқызы Адия</h3><div class="class-info">10 «А»</div><div class="achievement">Құқық негіздері пәнінен республикалық пәндік олимпиаданың қалалық кезеңде ІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Мырхиев Әбдікамал</div></div>
+            <div class="card"><div class="badge">📜 Тарих</div><h3>Сейтбек Қарақат</h3><div class="class-info">11 «Ә»</div><div class="achievement">Қазақстан тарихы пәнінен республикалық пәндік олимпиаданың қалалық кезеңде ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Календарова Айсұлу Алтынбековна</div></div>
+            <div class="card"><div class="badge">🌍 9-11</div><h3>Нұрлыбеков Дәурен</h3><div class="class-info">10-сынып</div><div class="achievement">География пәнінен қалалық кезеңде ІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Серлалықызы Ақбибі</div></div>
+            <div class="card"><div class="badge">🌍 9-11</div><h3>Өмірзақ Тоғжан</h3><div class="class-info">9-сынып</div><div class="achievement">География пәнінен қалалық кезеңде ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Жанұзақ Фарида</div></div>
+            <div class="card"><div class="badge">🧪 Химия</div><h3>Тасхожа Әсел</h3><div class="class-info">11-сынып</div><div class="achievement">Химия пәнінен қалалық кезеңде ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Ислам Жұлдыз</div></div>
+            <div class="card"><div class="badge">🔬 Биология</div><h3>Мұзанбет Нұрзия</h3><div class="class-info">9-сынып</div><div class="achievement">Биология пәнінен қалалық кезеңде ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Жұмағалиева Әсел</div></div>
+            <div class="card"><div class="badge">🔬 Биология</div><h3>Қайратқызы Мәуе</h3><div class="class-info">11-сынып</div><div class="achievement">Биология пәнінен қалалық кезеңде ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Жаханша Гүлвира</div></div>
+            <div class="card"><div class="badge">💻 9-11</div><h3>Орынбасар Айбек</h3><div class="class-info">10 «Ә»</div><div class="achievement">Информатика пәнінен республикалық пәндік олимпиаданың қалалық кезеңінде ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Елеусінова Жанна</div></div>
+            <div class="card"><div class="badge">📜 Тарих</div><h3>Әлімжанқызы Аида</h3><div class="class-info">9-сынып</div><div class="achievement">Қазақстан тарихынан қалалық кезеңде ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Оспанова Салтанат</div></div>
+            <div class="card"><div class="badge">📖 9-11</div><h3>Абуғали Інжу</h3><div class="class-info">9 «Б»</div><div class="achievement">Қазақ тілі мен әдебиетінен қалалық кезеңде ІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Жунусов Досан Болатұлы</div></div>
+        </div>
+    </div>
+
+    <!-- 2. ҒЫЛЫМИ ЖОБАЛАР ЖӘНЕ ЗЕРДЕ -->
+    <div id="tab2" class="tab-pane">
+        <div class="grid">
+            <div class="card"><div class="badge">🌱 Дарын</div><h3>Ниязбаева Назерке</h3><div class="class-info">10 «Ә»</div><div class="achievement">Республикалық ғылыми жобалар байқауының қалалық кезеңінде ІІ орын, облыстық кезеңінде ІІ орын. Тақырыбы: «Smart ферма. Мал шаруашылығын автоматтандыру жүйесі».</div><div class="teacher"><strong>Жетекшісі:</strong> Сыздықова Күнсұлу Бейсенғалиқызы</div></div>
+            <div class="card"><div class="badge">📚 Дарын</div><h3>Сейтбек Қарақат</h3><div class="class-info">11 «Ә»</div><div class="achievement">Республикалық ғылыми жобалар конкурсының облыстық кезеңінде ІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Календарова Айсұлу Алтынбековна</div></div>
+            <div class="card"><div class="badge">📖 Мәшһүр Жүсіп</div><h3>Серкебаева Аяжан</h3><div class="class-info">9 «Б»</div><div class="achievement">«Мәшһүр Жүсіп оқулары» байқауының ғылыми зерттеу бағыты бойынша қалалық І орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Жунусов Досан Болатұлы</div></div>
+            <div class="card"><div class="badge">🔬 Дарын</div><h3>Тойлыбай Айкенай</h3><div class="class-info">6 «Б»</div><div class="achievement">Республикалық ғылыми жобаның қалалық кезеңінде ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Елеусінова Жанна Мирамбекқызы</div></div>
+            <div class="card"><div class="badge">💧 Эко-зерттеу</div><h3>Темірбекова Раяна & Өмірзақ Тоғжан</h3><div class="class-info">9-сынып</div><div class="achievement">«Ақеспе ыстық су шипалы бұлағын дамытудың туристік, экологиялық аспектілері» тақырыбында қалалық І орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Жанұзақ Фарида</div></div>
+            <div class="card"><div class="badge">🌿 Медицина</div><h3>Бақытбекова Жұлдыз</h3><div class="class-info">—</div><div class="achievement">«Дәрілік шалфей өсімдік шикізатының экстракттар дайындау және олардың антиоксиданттық және антибактериалдық қасиеттерін зерттеу» тақырыбында қалалық ІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Тілекбай Жансая</div></div>
+            <div class="card"><div class="badge">✨ Зерде</div><h3>Қайрат Аделя</h3><div class="class-info">4 «А»</div><div class="achievement">«Зерде» ғылыми жобалар байқауының қалалық кезеңінде ІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Есқабылова Жанар</div></div>
+            <div class="card"><div class="badge">📖 Зерде орыс тілі</div><h3>Маратов Санжар</h3><div class="class-info">4 «А»</div><div class="achievement">«Зерде» республикалық конкурсының орыс тілі мен әдебиеті бағыты бойынша қалалық кезеңде ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Токтамысова Эльмира</div></div>
+            <div class="card"><div class="badge">🚤 Зерде</div><h3>Август Ғазиза</h3><div class="class-info">4-сынып</div><div class="achievement">«Күн энергиясымен қозғалатын экологиялық қайық» тақырыбында қалалық І орын, облыстық ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Әбілтай Әсем</div></div>
+            <div class="card"><div class="badge">🌳 Зерде</div><h3>Ермекбай Алинұр</h3><div class="class-info">2-сынып</div><div class="achievement">«Қамыстан тұрғызылған экологиялық саябақ – жасыл болашақ кепіл» тақырыбында қалалық ІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Қонысова Жанна</div></div>
+            <div class="card"><div class="badge">🎨 Зерде өнер</div><h3>Ғали Сұңғат</h3><div class="class-info">7 «А»</div><div class="achievement">«Зерде» республикалық конкурсының технология, өнер бағыты бойынша («ЖИ-дің көмегімен степлер арқылы портрет салу») қалалық кезеңде ІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Джусупбаев Даурен Мухамедович</div></div>
+            <div class="card"><div class="badge">🏕️ Зерде спорт</div><h3>Ерболат Әмина</h3><div class="class-info">6 «Б»</div><div class="achievement">«Зерде» республикалық конкурсының спорт және туризм бағыты бойынша 2-7 сынып оқушылары арасында ІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Оразалиев Мұхтар</div></div>
+            <div class="card"><div class="badge">📐 Зерде математика</div><h3>Қожабай Шынар</h3><div class="class-info">4-сынып</div><div class="achievement">«Математикалық есептеулер арқылы үй жағдайында көкөністерді өсіруде суды үнемдеу жолдары» қолданбалы математика бағыты бойынша қалалық ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Калиева Раушангул</div></div>
+            <div class="card"><div class="badge">🌍 Зерде ағылшын</div><h3>Қалауова Шұғыла</h3><div class="class-info">6-сынып</div><div class="achievement">«Comparison of the worldview of Kazakh and English fairy tales» ағылшын тілі бағыты бойынша қалалық ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Бейбітжан Ақерке</div></div>
+            <div class="card"><div class="badge">📜 Зерде тарих</div><h3>Қайырбек Томирис</h3><div class="class-info">7-сынып</div><div class="achievement">«Алаш қайраткерлерінің Қызылордалық кезеңі» тарих бағыты бойынша қалалық ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Ермағанбет Айжан</div></div>
+            <div class="card"><div class="badge">⚡ Зерде физика</div><h3>Төребек Ерқожа</h3><div class="class-info">7-сынып</div><div class="achievement">«Сутек және күн қуатымен жүретін экокөлік» физика секциясы бойынша қалалық ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Мұсатаева Бақтыгүл</div></div>
+            <div class="card"><div class="badge">💊 Зерде медицина</div><h3>Сауытбай Аманкелді</h3><div class="class-info">2-сынып</div><div class="achievement">«Қарбыз дәнінен жасалған нан өнімдерінің адам денсаулығына пайдасы» медицина бағыты бойынша қатысушы.</div><div class="teacher"><strong>Жетекшісі:</strong> Алибаева Жанат</div></div>
+        </div>
+    </div>
+
+    <!-- 3. РОБОТОТЕХНИКА -->
+    <div id="tab3" class="tab-pane">
+        <div class="grid">
+            <div class="card"><div class="badge">🤖 FIRST LEGO League</div><h3>Айберген Алдияр</h3><div class="class-info">4 «А»</div><div class="achievement">«FIRST LEGO League Kyrgyzstan Championship 2026» халықаралық жарысында «Champion Award Finalist» марапаты және Қытайда өтетін әлемдік кезеңге жолдама.</div><div class="teacher"><strong>Жетекшілері:</strong> Рахатов Өтеміс, Смаханова Мөлдір, Сыздықова Күнсұлу</div></div>
+            <div class="card"><div class="badge">⚙️ ALEM TECH FEST</div><h3>Рахат Нұрдаулет</h3><div class="class-info">3 «А»</div><div class="achievement">Астана қаласында өткен «ALEM TECH FEST 2026» халықаралық фестивалінде «TEAM MODEL AWARD» марапаты және облыстық LEGO жарысында І орын.</div><div class="teacher"><strong>Жетекшілері:</strong> Елеусінова Жанна, Сыздықова Күнсұлу</div></div>
+            <div class="card"><div class="badge">🔧 Өнертапқыштық</div><h3>Тұрдыбай Бегімсұлу</h3><div class="class-info">8 «Ә»</div><div class="achievement">«Ұлы өнертапқыштыққа алғашқы қадам» байқауының қалалық кезеңінде ІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Сыздықова Күнсұлу Бейсенғалиқызы</div></div>
+            <div class="card"><div class="badge">✏️ FAST DESIGN</div><h3>Қалмырзаева Алуа</h3><div class="class-info">9-сынып</div><div class="achievement">«FAST DESIGN» шығармашылық сайысында Абылай хан атындағы жоғары колледжінің грант иегері.</div><div class="teacher"><strong>Жетекшісі:</strong> Жалелова Фариза</div></div>
+            <div class="card"><div class="badge">🤖 FIRST LEGO League</div><h3>Қайырбек Ахмедияр</h3><div class="class-info">4 «А»</div><div class="achievement">«FIRST LEGO League» халықаралық жарысының жүлдегері (Ot Ai командасы).</div></div>
+            <div class="card"><div class="badge">🏆 Smart Ферма</div><h3>Қанибек Сұңғат</h3><div class="class-info">8 «Д»</div><div class="achievement">«Ұлы өнертапқыштыққа алғашқы қадам» байқауында «Smart Ферма» жобасымен қалалық ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Сыздықова Күнсұлу</div></div>
+            <div class="card"><div class="badge">🌱 Микрожасыл</div><h3>Микрожасыл жобасы</h3><div class="class-info">—</div><div class="achievement">«Микрожасыл – кішкентай жас өрен, үлкен мүмкіндік» жобасы қалалық І орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Ибраева Фазила Болатовна</div></div>
+        </div>
+    </div>
+
+    <!-- 4. СУ МИНИСТРЛІГІ ЖӘНЕ ЭКОЛОГИЯ -->
+    <div id="tab4" class="tab-pane">
+        <div class="grid">
+            <div class="card"><div class="badge">💧 Су & болашақ</div><h3>Айша Мұсылманбек</h3><div class="class-info">3 «В»</div><div class="achievement">«Суды үнемде – болашақты сақта» атты аймақтық сурет байқауының жеңімпазы.</div><div class="teacher"><strong>Жетекшісі:</strong> Бижанова Р.Е.</div></div>
+            <div class="card"><div class="badge">🌊 Су және білім</div><h3>Сағындық Әлфаруқ</h3><div class="class-info">—</div><div class="achievement">«Су және білім» жобасы аясындағы сурет байқауының жеңімпазы.</div><div class="teacher"><strong>Жетекшісі:</strong> Әбілтай Әсем</div></div>
+            <div class="card"><div class="badge">💧 Экосурет</div><h3>Томарбай Нұрасыл</h3><div class="class-info">3 «Ә»</div><div class="achievement">«Су және білім» жобасы аясындағы сурет байқауының жеңімпазы.</div><div class="teacher"><strong>Жетекшісі:</strong> Жалғасбайқызы Ұлдана</div></div>
+            <div class="card"><div class="badge">🌿 ProEco</div><h3>Аширбек Ханшайым</h3><div class="class-info">0 «Б»</div><div class="achievement">«Мен зерттеушімін» республикалық байқауының қалалық кезеңінде І орын, облыстық кезеңінде «Жас эколог» номинациясы иегері.</div><div class="teacher"><strong>Жетекшісі:</strong> Ибраева Фазила Болатовна</div></div>
+            <div class="card"><div class="badge">♻️ Экология</div><h3>Адиет Назерке</h3><div class="class-info">10 «Ә»</div><div class="achievement">«Ұлы өнертапқыштыққа алғашқы қадам» байқауының экология бағыты бойынша қалалық ІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Сыздықова Күнсұлу Бейсенғалиқызы</div></div>
+            <div class="card"><div class="badge">🌱 Экология</div><h3>Жалиева Айнұр</h3><div class="class-info">4-сынып</div><div class="achievement">«Зерде» конкурсы аясында жаратылыстану (экология) бағыты бойынша қалалық ІІ орын.</div></div>
+        </div>
+    </div>
+
+    <!-- 5. ПОЭЗИЯ ЖӘНЕ МҰҚАҒАЛИ ОҚУЛАРЫ -->
+    <div id="tab5" class="tab-pane">
+        <div class="grid">
+            <div class="card"><div class="badge">🎭 Бас жүлде</div><h3>Мейрамбекқызы Айнамкөз</h3><div class="class-info">8 «А»</div><div class="achievement">Мұқағали Мақатаевтың 95 жылдығына арналған «Есіңе мені алғайсың» қалалық байқауында БАС ЖҮЛДЕ.</div><div class="teacher"><strong>Жетекшісі:</strong> Сауяева Венера</div></div>
+            <div class="card"><div class="badge">🎤 Мұқағали оқулары</div><h3>Бақытбек Жұлдыз</h3><div class="class-info">8 «Г»</div><div class="achievement">Мұқағали оқуларының қалалық кезеңінде І орын, облыстық кезеңінде ІІІ орын. Сондай-ақ «Ақберен» байқауында қалалық ІІ орын және «Мағжан оқулары» облыстық ІІІ орын иегері.</div><div class="teacher"><strong>Жетекшісі:</strong> Сауяева Венера</div></div>
+            <div class="card"><div class="badge">📖 Мұқағали</div><h3>Кенжебек Қасиет</h3><div class="class-info">5 «В»</div><div class="achievement">«Есіңе мені алғайсың» қалалық байқауында І орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Сауяева Венера</div></div>
+            <div class="card"><div class="badge">🎙️ Мәнерлеп оқу</div><h3>Серкебаева Аяжан</h3><div class="class-info">9 «Б»</div><div class="achievement">Мұқағали өлеңдерін мәнерлеп оқудан қалалық байқауда І орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Сауяева Венера</div></div>
+            <div class="card"><div class="badge">🌍 Абай үні</div><h3>Жунитова Раяна</h3><div class="class-info">8 «Д»</div><div class="achievement">«Абай үні – әлем тілімен» өзге ұлт оқушыларына арналған мәнерлеп оқу сайысында ІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Кожахметова Бейбіт</div></div>
+            <div class="card"><div class="badge">🍂 Мұқағали</div><h3>Әуелхан Айзере</h3><div class="class-info">5 «В»</div><div class="achievement">Мұқағали оқуларының қалалық кезеңінде ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Сауяева Венера</div></div>
+            <div class="card"><div class="badge">✍️ Ақберен</div><h3>Абуғали Інжу</h3><div class="class-info">9 «Б»</div><div class="achievement">«Ақберен» республикалық өнер байқауының қалалық кезеңінде «Эссе жазу» номинациясы бойынша ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Жунусов Досан Болатұлы</div></div>
+            <div class="card"><div class="badge">🎼 Ұлттық аспап</div><h3>Алиева Инабат</h3><div class="class-info">10 «Б»</div><div class="achievement">«Ақберен» байқауының «Ұлттық аспапта өнер көрсету» номинациясы бойынша ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Қуатбаев Ерболат</div></div>
+            <div class="card"><div class="badge">📜 Ақындар мүшайрасы</div><h3>Орынбекқызы Фарида</h3><div class="class-info">11 «Ә»</div><div class="achievement">«Ақберен» байқауының қалалық кезеңінде «Ақындар мүшайрасы» бойынша Алғыс хат иегері және «Махамбет оқулары» облыстық ІІ орын иегері.</div><div class="teacher"><strong>Жетекшісі:</strong> Жунусов Досан</div></div>
+        </div>
+    </div>
+
+    <!-- 6. СПОРТ, ШЕБЕРЛІК, БИ -->
+    <div id="tab6" class="tab-pane">
+        <div class="grid">
+            <div class="card"><div class="badge">⚽ Футзал</div><h3>7-8 сыныптар құрамасы</h3><div class="achievement">Футзалдан республикалық жарыста ІІ орын.</div>
+                <div class="team-list"><span>Команда:</span> Серікбай Исмат (7Ә), Төлемберген Нұрдәулет (8Г), Тәңірберген Нұрәлі (7Ә), Шакизада Елдос (7Ә), Ғанимардан Атажан (7А), Нұрмағанбет Ділмұрат (7А), Базарбек Нұрасыл (7А), Мұратбеков Дидар (8Б), Жасекен Жасар (8В), Жанабаев Арсен (7А), Болатбеков Батырхан (8Б), Әділхан Нұрсұлтан (8Ә).</div>
+                <div class="teacher"><strong>Жетекшілері:</strong> Садықов Жомарт, Қожбан Дәулетхан</div></div>
+            <div class="card"><div class="badge">🏋️ Пара пауэрлифтинг</div><h3>Айтжан Дильназ</h3><div class="achievement">Бангкок қаласында өткен пара пауэрлифтингтен жасөспірімдер арасында 2-орын (жеке көтеру) және 1-орын (жалпы ұпай).</div></div>
+            <div class="card"><div class="badge">💃 АЙЯ би ансамблі</div><h3>«АЙЯ» би ансамблі</h3><div class="achievement">«Жарқыра жұлдыз» халықаралық жарысында 2 түрлі би бойынша VIP GRAND PRIX жеңімпазы.</div><div class="teacher"><strong>Жетекшісі:</strong> Абдукаликова Айгуль</div></div>
+            <div class="card"><div class="badge">🔫 Жас сарбаз</div><h3>Бақытғали Асель</h3><div class="class-info">11-сынып</div><div class="achievement">«Жас сарбаз-2026» қалалық сайысында АК-74 автоматты бөлшектеп-жинаудан ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Бектай Ілияс</div></div>
+            <div class="card"><div class="badge">🍰 Junior Skills</div><h3>Бақытжан Кәусар</h3><div class="class-info">9-сынып</div><div class="achievement">«Junior Skills-2025» республикалық кәсіби шеберлік конкурсының кондитерлік іс бағыты бойынша қалалық І орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Ахметова Қарлығаш</div></div>
+            <div class="card"><div class="badge">🥋 GAMMA MMI</div><h3>Қалдыбай Бекарыс</h3><div class="achievement">«GAMMA MMI» спорттық сайысының жүлделі орын иегері.</div><div class="teacher"><strong>Жетекшісі:</strong> Ибрагимова Салтанат</div></div>
+            <div class="card"><div class="badge">🎨 Сән & Дизайн</div><h3>Адилбайқызы Айзат</h3><div class="class-info">9-сынып</div><div class="achievement">«Алтын қазына» республикалық көрме-байқауында қалалық ІІ орын; «Junior Skills-2025» («Сән технологиясы») қалалық ІІІ орын; «FAST DESIGN» облыстық ІІІ орын.</div><div class="teacher"><strong>Жетекшісі:</strong> Абдраманова Шолпан</div></div>
+            <div class="card"><div class="badge">🎭 Театрландырылған батл</div><h3>Есемұрат А., Шыңғысхан М., Ерболат А., Асылбеков А.</h3><div class="achievement">«Кітаптағы кейіпкер» театрландырылған батлда ІІ дәрежелі диплом иегерлері.</div><div class="teacher"><strong>Жетекшісі:</strong> Арленкеева Вераника</div></div>
+            <div class="card"><div class="badge">⚽ Мұғалімдер футболы</div><h3>Мұғалімдер командасы</h3><div class="achievement">Қалалық кіші футбол турнирінің жүлделі ІІІ орын иегерлері.</div></div>
+        </div>
+    </div>
+
+    <!-- 7. ПЕДАГОГТЕРДІҢ МАРАПАТТАРЫ -->
+    <div id="tab7" class="tab-pane">
+        <div class="grid">
+            <div class="card"><div class="badge">👑 Үздік педагог</div><h3>Аймыратова Гайнегүл Әбдіжанқызы</h3><div class="achievement">«ҮЗДІК ПЕДАГОГ – 2025» атағының иегері. «Педагогикалық идеялар фестивалі-2025» байқауында қалалық І орын, облыстық ІІІ орын.</div></div>
+            <div class="card"><div class="badge">📚 Панорама-2025</div><h3>Киынбаева Мерует Сабитовна</h3><div class="achievement">«Педагогикалық идеялар панорама-2025» республикалық байқауының аймақтық кезеңінде ІІ орын.</div></div>
+            <div class="card"><div class="badge">🎭 Идеялар фестивалі</div><h3>Жұмағали Азамат Жұмағалиұлы</h3><div class="achievement">«Педагогикалық идеялар фестивалі-2025» байқауында ІІ орын.</div></div>
+            <div class="card"><div class="badge">💧 Идеялар фестивалі</div><h3>Бижанова Райкүл Ерханқызы</h3><div class="achievement">«Педагогикалық идеялар фестивалі-2025» байқауында ІІІ орын.</div></div>
+            <div class="card"><div class="badge">🎤 Идеялар фестивалі</div><h3>Есетова Айдана Аманбаевна</h3><div class="achievement">«Педагогикалық идеялар фестивалі-2025» байқауында ІІІ орын және «Ақберен» журналының Алғыс хатымен марапатталған.</div></div>
+            <div class="card"><div class="badge">📖 Кітап әлемі</div><h3>Баймағанбетова Гүлнара Зұлпұхарқызы</h3><div class="achievement">ІІ Республикалық «Кітап әлемі – кадрда» байқауының ФИНАЛИСІ.</div></div>
+            <div class="card"><div class="badge">💃 Хореограф</div><h3>Абдукаликова Айгуль Кабылбековна</h3><div class="achievement">ҚР Су ресурстары және ирригация министрлігінің Алғыс хаты; Аманат партиясының Алғыс хаты; Қалалық білім бөлімінің Алғысы; Кәсіподақ ұйымының Құрмет грамотасы; Облыстық байқаудың ІІ орын Дипломы.</div></div>
+            <div class="card"><div class="badge">🌍 Идеялар фестивалі</div><h3>Бейбітжан Ақерке</h3><div class="achievement">«Педагогикалық идеялар фестивалі-2025» байқауында ІІІ орын.</div></div>
+            <div class="card"><div class="badge">📑 Ғылыми конференция</div><h3>Мұсатаева Бақтыгүл Исатайқызы</h3><div class="achievement">Өскемен қаласындағы НЗМ-де өткен республикалық ғылыми-тәжірибелік конференцияда «Секцияның үздік баяндамасы» грамотасының иегері.</div></div>
+            <div class="card"><div class="badge">✍️ Диплом, Алғыс</div><h3>Жунусов Досан Болатович</h3><div class="achievement">XI Республикалық қашықтық олимпиадасының ІІ дәрежелі Диплом иегері. Қала әкімінің Алғыс хатымен марапатталған.</div></div>
+            <div class="card"><div class="badge">🏆 Педстарт</div><h3>Абдухапова Г.</h3><div class="achievement">«Педстарт» республикалық олимпиадасының І дәрежелі Диплом иегері.</div></div>
+            <div class="card"><div class="badge">🏆 Педстарт, Алтын тұғыр</div><h3>Зұлхарнаева Әселхан Талғатқызы</h3><div class="achievement">«Педстарт» республикалық олимпиадасының І орын иегері; «Алтын тұғыр» қалалық І орын, облыстық ІІІ орын.</div></div>
+            <div class="card"><div class="badge">🌟 Дарын, Халықаралық</div><h3>Омарова Г.</h3><div class="achievement">«Дарын» орталығының Алғысы және «Жарқыра жұлдыз» халықаралық байқауының Алғыс хат иегері.</div></div>
+        </div>
+    </div>
+
+    <footer>
+        ⭐ Жыл жұлдыздары — 2025/2026 оқу жылы. Әр жеңістің артында ұстаз бен шәкірттің бірлескен еңбегі тұр. ⭐
+    </footer>
+</div>
+
+<script>
+    const tabs = document.querySelectorAll('.tab-btn');
+    const panes = document.querySelectorAll('.tab-pane');
+
+    function activateTab(tabId) {
+        panes.forEach(pane => pane.classList.remove('active-pane'));
+        const activePane = document.getElementById(tabId);
+        if (activePane) activePane.classList.add('active-pane');
+        tabs.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-tab') === tabId) btn.classList.add('active');
+        });
+    }
+
+    tabs.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabId = btn.getAttribute('data-tab');
+            if (tabId) activateTab(tabId);
+        });
+    });
+
+    if (!document.querySelector('.tab-pane.active-pane')) activateTab('tab1');
+</script>
+</body>
+</html>
+```
